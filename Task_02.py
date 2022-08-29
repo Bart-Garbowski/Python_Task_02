@@ -15,9 +15,9 @@ for element_number in range(1, number_of_elements + 1):
     element_weight = input(f"Waga elementu numer {element_number}[kg]: ")
     element_weight = float(element_weight)
 
-    if element_weight == 0:
-        print("###KONIEC PROGRAMU!###")
-        break
+    #if element_weight == 0:
+        #print("###KONIEC PROGRAMU!###")
+        #break
 
     if element_weight > 10 or element_weight < 1 and element_weight != 0:
         print(f"---Waga {element_weight} kg poza zakresem!---")
@@ -45,14 +45,14 @@ for element_number in range(1, number_of_elements + 1):
     elements_total_weight += element_weight
 
     if element_number == number_of_elements:
-        if element_weight > 0:
+        if element_weight >= 0:
             packages_number += 1
 
             if (TOTAL_PACKAGE_WEIGHT - element_weight) >= package_weight_empty:
                 package_num_empty = packages_number
                 package_weight_empty = TOTAL_PACKAGE_WEIGHT - element_weight
 
-    last_element_weight = elements_total_weight
+    #last_element_weight = elements_total_weight
 
 total_empty_weight = (packages_number * TOTAL_PACKAGE_WEIGHT) - elements_total_weight
 total_empty_weight = round(total_empty_weight, 0)
